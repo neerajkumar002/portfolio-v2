@@ -1,11 +1,22 @@
-import Header from "./Header";
+import { NavLink } from "react-router-dom";
+import Header from "./header/Header";
+import Navbar from "./navbar/Navbar";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="min-h-screen w-[700px] mx-auto   pt-10 ">
       <Header />
-      <main>outlet</main>
-      <footer>footer</footer>
+      <main>
+        <Navbar />
+        <div>{children}</div>
+      </main>
+      <footer className=" ">
+        <div className="text-center">
+          <p>
+            Made with <span className="animate-pulse">❤</span> by Neeraj Kumar
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
